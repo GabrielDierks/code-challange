@@ -1,25 +1,27 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
+import { Provider, connect } from "react-redux";
+import store from "./store";
+import { resetMessage, changeMessage } from "./actions";
+
 import "./style.css";
 
 class Communicator extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { message: this.props.message };
+  componentDidMount() {
+    console.log(this.props);
   }
 
   resetComm() {
-    this.setState({ message: "" });
+    store.dispatch(resetMessage());
   }
 
   updateComm(message) {
-    this.setState({
-      message
-    });
+    store.dispatch(changeMessage(message));
   }
 
   render() {
-    const { message } = this.state;
+    const { message } = this.props;
+
     return (
       <div>
         <input onChange={event => this.updateComm(event.target.value)} value={message} />
@@ -30,6 +32,23 @@ class Communicator extends Component {
   }
 }
 
-const initMessage = "They called the Enterprise a garbage scow!";
+const mapStateToProps = state => ({
+  message: state.message
+});
 
-ReactDOM.render(<Communicator message={initMessage} />, document.getElementById("appMount"));
+const CommunicatorWrapper = connect(
+  mapStateToProps,
+  { resetMessage, changeMessage }
+)(Communicator);
+
+const App = () => {
+  return <CommunicatorWrapper />;
+};
+
+const Root = () => (
+  <Provider store={store}>
+    <App />
+  </Provider>
+);
+
+ReactDOM.render(<Root />, document.getElementById("appMount"));
