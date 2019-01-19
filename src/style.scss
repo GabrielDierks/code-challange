@@ -1,3 +1,127 @@
 body {
   text-align: center;
+  margin: 0;
+
+  .Communicator {
+    &-background {
+      z-index: -1;
+      position: fixed;
+      height: 100%;
+      width: 500%;
+      background: linear-gradient(270deg, #f7027c, #0057ff, #00b59b, #dde00f);
+      animation: backgroundMove 10s infinite;
+    }
+
+    &-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px 10px;
+      border-radius: 75px;
+      font-size: 25px;
+      display: inline-flex;
+
+      input,
+      button {
+        padding: 20px 30px;
+        font-size: 32px;
+        margin: 0 15px;
+        border-radius: 50px;
+        user-select: none;
+        outline-style: none;
+      }
+      input {
+        width: 500px;
+        border: 0;
+      }
+      button {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        color: #fff;
+        background: #222;
+        margin: 0px 10px;
+        border: none;
+        outline-style: none;
+        cursor: pointer;
+        transition: all 0.1s ease;
+        transform: scale(0.95);
+        font-size: 14px;
+        transform-origin: 50% 70%;
+        padding: 15px;
+        transform: rotate(0deg);
+        transform-origin: 50% 50%;
+
+        &.clear {
+          transform: rotate(45deg);
+        }
+
+        &:before {
+          content: "";
+          position: absolute;
+          left: 32px;
+          top: 15px;
+          width: 5px;
+          height: 50px;
+          border: solid white;
+          border-width: 0 4px 0 0;
+        }
+        &:after {
+          position: absolute;
+          content: "";
+          left: 35px;
+          top: 12px;
+          width: 5px;
+          height: 50px;
+          border: solid white;
+          border-width: 0 4px 0 0;
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(90deg);
+        }
+        &:hover {
+          opacity: 0.8;
+          animation: 0.5s circle;
+        }
+        &:active {
+          transform: scale(0.95);
+        }
+      }
+    }
+
+    p {
+      font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica,
+        ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+      font-size: 200px;
+      margin: 0;
+      padding: 100px 0;
+      text-transform: uppercase;
+      font-weight: 800;
+      opacity: 0.2;
+      word-break: break-all;
+      pointer-events: none;
+    }
+  }
+}
+
+@keyframes circle {
+  0% {
+    transform: roate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes backgroundMove {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-80%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }

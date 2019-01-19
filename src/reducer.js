@@ -1,6 +1,6 @@
 import { RESET_MESSAGE, CHANGE_MESSAGE } from "./types";
 
-const initialState = { message: "They called the Enterprise a garbage scow!" };
+const initialState = { message: "" };
 
 const rootReducer = function(state, action) {
   switch (action.type) {
