@@ -1,12 +1,41 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import './style.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+class Communicator extends Component {
+  
+  constructor(props) {
+    super(props);
+    this.state = {message: this.props.message};
+  }
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+  resetComm() {
+    this.setState({message: ''});
+  }
+
+  updateComm(message) {
+    this.setState({
+      message
+    });
+  }
+
+  render() {
+    const { message } = this.state;
+    return <div>
+      <input onChange={event => this.updateComm(event.target.value)}
+             value={message}/>
+      <p>Scotty: {message}</p>
+      <button
+        onClick={() => this.resetComm() }>
+        Clear
+      </button>
+    </div>;
+  }
+}
+
+const initMessage = "They called the Enterprise a garbage scow!";
+
+ReactDOM.render(
+  <Communicator message={initMessage}/>,
+  document.getElementById('appMount')
+);
