@@ -34,6 +34,15 @@ body {
       input {
         width: 500px;
         border: 0;
+
+        @media (max-width: 767px) {
+          width: 200px;
+          font-size: 26px;
+        }
+        @media (max-width: 320px) {
+          width: 120px;
+          font-size: 14px;
+        }
       }
       button {
         width: 80px;
@@ -53,8 +62,17 @@ body {
         transform: rotate(0deg);
         transform-origin: 50% 50%;
 
+        &:hover {
+          opacity: 0.8;
+          animation: 0.5s circle ease-in-out;
+        }
+
         &.clear {
           transform: rotate(45deg);
+          &:hover {
+            opacity: 0.8;
+            animation-play-state: paused;
+          }
         }
 
         &:before {
@@ -80,12 +98,8 @@ body {
           -ms-transform: rotate(45deg);
           transform: rotate(90deg);
         }
-        &:hover {
-          opacity: 0.8;
-          animation: 0.5s circle;
-        }
         &:active {
-          transform: scale(0.95);
+          opacity: 0.2;
         }
       }
     }
@@ -101,6 +115,10 @@ body {
       opacity: 0.2;
       word-break: break-all;
       pointer-events: none;
+
+      @media (max-width: 767px) {
+        padding: 0;
+      }
     }
   }
 }

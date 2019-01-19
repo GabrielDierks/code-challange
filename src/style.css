@@ -28,6 +28,14 @@ body {
     body .Communicator-container input {
       width: 500px;
       border: 0; }
+      @media (max-width: 767px) {
+        body .Communicator-container input {
+          width: 200px;
+          font-size: 26px; } }
+      @media (max-width: 320px) {
+        body .Communicator-container input {
+          width: 120px;
+          font-size: 14px; } }
     body .Communicator-container button {
       width: 80px;
       height: 80px;
@@ -45,8 +53,14 @@ body {
       padding: 15px;
       transform: rotate(0deg);
       transform-origin: 50% 50%; }
+      body .Communicator-container button:hover {
+        opacity: 0.8;
+        animation: 0.5s circle ease-in-out; }
       body .Communicator-container button.clear {
         transform: rotate(45deg); }
+        body .Communicator-container button.clear:hover {
+          opacity: 0.8;
+          animation-play-state: paused; }
       body .Communicator-container button:before {
         content: "";
         position: absolute;
@@ -68,11 +82,8 @@ body {
         -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
         transform: rotate(90deg); }
-      body .Communicator-container button:hover {
-        opacity: 0.8;
-        animation: 0.5s circle; }
       body .Communicator-container button:active {
-        transform: scale(0.95); }
+        opacity: 0.2; }
   body .Communicator p {
     font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
     font-size: 200px;
@@ -83,6 +94,9 @@ body {
     opacity: 0.2;
     word-break: break-all;
     pointer-events: none; }
+    @media (max-width: 767px) {
+      body .Communicator p {
+        padding: 0; } }
 
 @keyframes circle {
   0% {
