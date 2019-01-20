@@ -61,6 +61,8 @@ class Communicator extends Component {
           className='Communicator-lottie Communicator-lottie__react Communicator-lottie__logo'>
           <Lottie
             options={logoOptions}
+            height={300}
+            width={300}
             isStopped={input === "wirvonhier" || input === "wir von hier" ? false : true}
           />
         </div>

@@ -149,17 +149,10 @@ body {
         }
       }
       &__react {
-        div {
-          position: absolute;
-          height: 1000px;
-          width: 1000px;
-        }
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
         animation: 0.5s forwards fadeout 4s ease-out;
-      }
-      &__logo {
-        div {
-          top: -150px;
-        }
       }
     }
   }

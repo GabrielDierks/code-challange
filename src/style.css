@@ -116,13 +116,10 @@ body {
         body .Communicator-lottie__car {
           animation: forwards driveMobile 2s ease-in; } }
     body .Communicator-lottie__react {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
       animation: 0.5s forwards fadeout 4s ease-out; }
-      body .Communicator-lottie__react div {
-        position: absolute;
-        height: 1000px;
-        width: 1000px; }
-    body .Communicator-lottie__logo div {
-      top: -150px; }
 
 @keyframes circle {
   0% {
