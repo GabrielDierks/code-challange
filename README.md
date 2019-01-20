@@ -1,15 +1,21 @@
-### Code-Challange für Wirvonhier
+#Code-Challange: WIR von HIER
+
+##
+
+#
 
 von Gabriel Dierks
 
 basierend auf http://plnkr.co/edit/OoZSHakqkILkJefIF1u9?p=info
 
-## Spin up
+### Spin up commands:
 
-# npm i
+### npm i
 
-to install zum installieren der benötigten Packages.
+Zum installieren der benötigten npm-packages.
 
-# npm start
+### npm start
 
-um die App im localhost zu starten.
+Um die App im localhost zu starten.
+
+#Viel Spaß!
