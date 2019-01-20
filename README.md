@@ -1,7 +1,5 @@
 # Code-Challange: WIR von HIER
 
-##
-
 von Gabriel Dierks
 
 basierend auf http://plnkr.co/edit/OoZSHakqkILkJefIF1u9?p=info
