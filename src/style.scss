@@ -3,6 +3,10 @@ body {
   margin: 0;
 
   .Communicator {
+    height: 100vh;
+    widows: 100%;
+    overflow: hidden;
+
     &-background {
       z-index: -1;
       position: fixed;
