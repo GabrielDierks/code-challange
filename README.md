@@ -1,8 +1,6 @@
-#Code-Challange: WIR von HIER
+# Code-Challange: WIR von HIER
 
 ##
-
-#
 
 von Gabriel Dierks
 
