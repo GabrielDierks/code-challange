@@ -7,7 +7,16 @@ body {
     height: 100%;
     width: 500%;
     background: linear-gradient(270deg, #f7027c, #0057ff, #00b59b, #dde00f);
-    animation: backgroundMove 10s infinite; }
+    transition: all 5s ease;
+    transform: translateX(-50%); }
+    body .Communicator-background__blue {
+      transform: translateX(-50%); }
+    body .Communicator-background__green {
+      transform: translateX(-20%); }
+    body .Communicator-background__yellow {
+      transform: translateX(0%); }
+    body .Communicator-background__red {
+      transform: translateX(-80%); }
   body .Communicator-container {
     position: absolute;
     top: 50%;
@@ -17,6 +26,8 @@ body {
     border-radius: 75px;
     font-size: 25px;
     display: inline-flex; }
+    body .Communicator-container form {
+      display: inherit; }
     body .Communicator-container input,
     body .Communicator-container button {
       padding: 20px 30px;
@@ -97,6 +108,15 @@ body {
     @media (max-width: 767px) {
       body .Communicator p {
         padding: 0; } }
+  body .Communicator-lottie {
+    pointer-events: none; }
+    body .Communicator-lottie__car {
+      animation: infinite drive 3s ease-in; }
+      @media (max-width: 767px) {
+        body .Communicator-lottie__car {
+          animation: forwards driveMobile 2s ease-in; } }
+    body .Communicator-lottie__react {
+      animation: 0.5s forwards fadeout 4s ease-out; }
 
 @keyframes circle {
   0% {
@@ -104,10 +124,20 @@ body {
   100% {
     transform: rotate(360deg); } }
 
-@keyframes backgroundMove {
+@keyframes drive {
   0% {
-    transform: translateX(0); }
-  50% {
-    transform: translateX(-80%); }
+    transform: translateX(100%); }
   100% {
-    transform: translateX(0); } }
+    transform: translateX(-100%); } }
+
+@keyframes driveMobile {
+  0% {
+    transform: translateX(100%); }
+  100% {
+    transform: translateX(-300%); } }
+
+@keyframes fadeout {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }

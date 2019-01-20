@@ -9,7 +9,21 @@ body {
       height: 100%;
       width: 500%;
       background: linear-gradient(270deg, #f7027c, #0057ff, #00b59b, #dde00f);
-      animation: backgroundMove 10s infinite;
+      transition: all 5s ease;
+      transform: translateX(-50%);
+
+      &__blue {
+        transform: translateX(-50%);
+      }
+      &__green {
+        transform: translateX(-20%);
+      }
+      &__yellow {
+        transform: translateX(0%);
+      }
+      &__red {
+        transform: translateX(-80%);
+      }
     }
 
     &-container {
@@ -21,6 +35,10 @@ body {
       border-radius: 75px;
       font-size: 25px;
       display: inline-flex;
+
+      form {
+        display: inherit;
+      }
 
       input,
       button {
@@ -120,6 +138,20 @@ body {
         padding: 0;
       }
     }
+
+    &-lottie {
+      pointer-events: none;
+
+      &__car {
+        animation: infinite drive 3s ease-in;
+        @media (max-width: 767px) {
+          animation: forwards driveMobile 2s ease-in;
+        }
+      }
+      &__react {
+        animation: 0.5s forwards fadeout 4s ease-out;
+      }
+    }
   }
 }
 
@@ -132,14 +164,27 @@ body {
   }
 }
 
-@keyframes backgroundMove {
+@keyframes drive {
   0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(-80%);
+    transform: translateX(100%);
   }
   100% {
-    transform: translateX(0);
+    transform: translateX(-100%);
+  }
+}
+@keyframes driveMobile {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-300%);
+  }
+}
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
