@@ -1,125 +1,129 @@
 body {
   text-align: center;
   margin: 0; }
-  body .Communicator-background {
-    z-index: -1;
-    position: fixed;
-    height: 100%;
-    width: 500%;
-    background: linear-gradient(270deg, #f7027c, #0057ff, #00b59b, #dde00f);
-    transition: all 5s ease;
-    transform: translateX(-50%); }
-    body .Communicator-background__blue {
-      transform: translateX(-50%); }
-    body .Communicator-background__green {
-      transform: translateX(-20%); }
-    body .Communicator-background__yellow {
-      transform: translateX(0%); }
-    body .Communicator-background__red {
-      transform: translateX(-80%); }
-  body .Communicator-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px 10px;
-    border-radius: 75px;
-    font-size: 25px;
-    display: inline-flex; }
-    body .Communicator-container form {
-      display: inherit; }
-    body .Communicator-container input,
-    body .Communicator-container button {
-      padding: 20px 30px;
-      font-size: 32px;
-      margin: 0 15px;
-      border-radius: 50px;
-      user-select: none;
-      outline-style: none; }
-    body .Communicator-container input {
-      width: 500px;
-      border: 0; }
-      @media (max-width: 767px) {
-        body .Communicator-container input {
-          width: 200px;
-          font-size: 26px; } }
-      @media (max-width: 320px) {
-        body .Communicator-container input {
-          width: 120px;
-          font-size: 14px; } }
-    body .Communicator-container button {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      color: #fff;
-      background: #222;
-      margin: 0px 10px;
-      border: none;
-      outline-style: none;
-      cursor: pointer;
-      transition: all 0.1s ease;
-      transform: scale(0.95);
-      font-size: 14px;
-      transform-origin: 50% 70%;
-      padding: 15px;
-      transform: rotate(0deg);
-      transform-origin: 50% 50%; }
-      body .Communicator-container button:hover {
-        opacity: 0.8;
-        animation: 0.5s circle ease-in-out; }
-      body .Communicator-container button.clear {
-        transform: rotate(45deg); }
-        body .Communicator-container button.clear:hover {
-          opacity: 0.8;
-          animation-play-state: paused; }
-      body .Communicator-container button:before {
-        content: "";
-        position: absolute;
-        left: 32px;
-        top: 15px;
-        width: 5px;
-        height: 50px;
-        border: solid white;
-        border-width: 0 4px 0 0; }
-      body .Communicator-container button:after {
-        position: absolute;
-        content: "";
-        left: 35px;
-        top: 12px;
-        width: 5px;
-        height: 50px;
-        border: solid white;
-        border-width: 0 4px 0 0;
-        -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-        transform: rotate(90deg); }
-      body .Communicator-container button:active {
-        opacity: 0.2; }
-  body .Communicator p {
-    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
-    font-size: 200px;
-    margin: 0;
-    padding: 100px 0;
-    text-transform: uppercase;
-    font-weight: 800;
-    opacity: 0.2;
-    word-break: break-all;
-    pointer-events: none; }
-    @media (max-width: 767px) {
-      body .Communicator p {
-        padding: 0; } }
-  body .Communicator-lottie {
-    pointer-events: none; }
-    body .Communicator-lottie__car {
-      animation: infinite drive 3s ease-in; }
-      @media (max-width: 767px) {
-        body .Communicator-lottie__car {
-          animation: forwards driveMobile 2s ease-in; } }
-    body .Communicator-lottie__react {
+  body .Communicator {
+    height: 100vh;
+    widows: 100%;
+    overflow: hidden; }
+    body .Communicator-background {
+      z-index: -1;
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(270deg, #f7027c, #0057ff, #00b59b, #dde00f);
+      background-size: 800% 800%;
+      transition: all 5s ease;
+      background-position: 50% 50%; }
+      body .Communicator-background__blue {
+        background-position: 50% 50%; }
+      body .Communicator-background__green {
+        background-position: 25% 50%; }
+      body .Communicator-background__yellow {
+        background-position: 0% 50%; }
+      body .Communicator-background__red {
+        background-position: 100% 50%; }
+    body .Communicator-container {
       position: absolute;
+      top: 50%;
       left: 50%;
-      transform: translateX(-50%);
-      animation: 0.5s forwards fadeout 4s ease-out; }
+      transform: translate(-50%, -50%);
+      padding: 20px 10px;
+      border-radius: 75px;
+      font-size: 25px;
+      display: inline-flex; }
+      body .Communicator-container form {
+        display: inherit; }
+      body .Communicator-container input,
+      body .Communicator-container button {
+        padding: 20px 30px;
+        font-size: 32px;
+        margin: 0 15px;
+        border-radius: 50px;
+        outline-style: none; }
+      body .Communicator-container input {
+        width: 500px;
+        border: 0; }
+        @media (max-width: 767px) {
+          body .Communicator-container input {
+            width: 200px;
+            font-size: 26px; } }
+        @media (max-width: 320px) {
+          body .Communicator-container input {
+            width: 120px;
+            font-size: 14px; } }
+      body .Communicator-container button {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        color: #fff;
+        background: #222;
+        margin: 0px 10px;
+        border: none;
+        outline-style: none;
+        cursor: pointer;
+        transition: all 0.1s ease;
+        transform: scale(0.95);
+        font-size: 14px;
+        transform-origin: 50% 70%;
+        padding: 15px;
+        transform: rotate(0deg);
+        transform-origin: 50% 50%; }
+        body .Communicator-container button:hover {
+          opacity: 0.8;
+          animation: 0.5s circle ease-in-out; }
+        body .Communicator-container button.clear {
+          transform: rotate(45deg); }
+          body .Communicator-container button.clear:hover {
+            opacity: 0.8;
+            animation-play-state: paused; }
+        body .Communicator-container button:before {
+          content: "";
+          position: absolute;
+          left: 32px;
+          top: 15px;
+          width: 5px;
+          height: 50px;
+          border: solid white;
+          border-width: 0 4px 0 0; }
+        body .Communicator-container button:after {
+          position: absolute;
+          content: "";
+          left: 35px;
+          top: 12px;
+          width: 5px;
+          height: 50px;
+          border: solid white;
+          border-width: 0 4px 0 0;
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(90deg); }
+        body .Communicator-container button:active {
+          opacity: 0.2; }
+    body .Communicator p {
+      font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+      font-size: 200px;
+      margin: 0;
+      padding: 100px 0;
+      text-transform: uppercase;
+      font-weight: 800;
+      opacity: 0.2;
+      word-break: break-all;
+      pointer-events: none; }
+      @media (max-width: 767px) {
+        body .Communicator p {
+          padding: 0; } }
+    body .Communicator-lottie {
+      pointer-events: none; }
+      body .Communicator-lottie__car {
+        animation: infinite drive 3s ease-in; }
+        @media (max-width: 767px) {
+          body .Communicator-lottie__car {
+            animation: forwards driveMobile 2s ease-in; } }
+      body .Communicator-lottie__react {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: 0.5s forwards fadeout 4s ease-out; }
 
 @keyframes circle {
   0% {
