@@ -35,6 +35,14 @@ class Communicator extends Component {
         preserveAspectRatio: "xMidYMid slice"
       }
     };
+    const logoOptions = {
+      loop: false,
+      autoplay: true,
+      animationData: require("./lottie/logo.json"),
+      rendererSettings: {
+        preserveAspectRatio: "xMidYMid slice"
+      }
+    };
 
     return (
       <div className='Communicator'>
@@ -42,11 +50,18 @@ class Communicator extends Component {
         <div
           style={input === "react" ? { display: "block" } : { display: "none" }}
           className='Communicator-lottie Communicator-lottie__react'>
+          <Lottie options={otherOptions} isStopped={input === "react" ? false : true} />
+        </div>
+        <div
+          style={
+            input === "wirvonhier" || input === "wir von hier"
+              ? { display: "block" }
+              : { display: "none" }
+          }
+          className='Communicator-lottie Communicator-lottie__react Communicator-lottie__logo'>
           <Lottie
-            options={otherOptions}
-            height={1000}
-            width={1000}
-            isStopped={input === "react" ? false : true}
+            options={logoOptions}
+            isStopped={input === "wirvonhier" || input === "wir von hier" ? false : true}
           />
         </div>
         <div className='Communicator-container'>
